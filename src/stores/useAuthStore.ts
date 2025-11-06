@@ -18,9 +18,6 @@ export const useAuthStore = create<AuthStore>((set) => ({
 	checkAdminStatus: async () => {
 		set({ isLoading: true, error: null });
 		try {
-			console.log("ENV:",import.meta.env);
-			console.log("SERVER URL:", import.meta.env.VITE_SERVER_URL);
-			console.log("MODE:", import.meta.env.VITE_MODE);
 			const response = await axiosInstance.get("/admin/check");
 			set({ isAdmin: response.data.admin });
 		} catch (error: any) {

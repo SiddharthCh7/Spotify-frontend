@@ -47,8 +47,8 @@ const AlbumPage = () => {
 				<div className='relative min-h-full'>
 					{/* bg gradient */}
 					<div
-						className='absolute inset-0 bg-gradient-to-b from-[#5038a0]/80 via-zinc-900/80
-					 to-zinc-900 pointer-events-none'
+						className='absolute inset-0 bg-gradient-to-b from-primary/20 via-zinc-900/40
+					 to-zinc-900/60 pointer-events-none'
 						aria-hidden='true'
 					/>
 
@@ -76,13 +76,13 @@ const AlbumPage = () => {
 							<Button
 								onClick={handlePlayAlbum}
 								size='icon'
-								className='w-14 h-14 rounded-full bg-green-500 hover:bg-green-400 
-                hover:scale-105 transition-all'
+								className='w-14 h-14 rounded-full bg-primary hover:bg-primary/80 
+                hover:scale-105 transition-all shadow-lg shadow-primary/20'
 							>
 								{isPlaying && currentAlbum?.songs.some((song) => song._id === currentSong?._id) ? (
-									<Pause className='h-7 w-7 text-black' />
+									<Pause className='h-7 w-7 text-primary-foreground' />
 								) : (
-									<Play className='h-7 w-7 text-black' />
+									<Play className='h-7 w-7 text-primary-foreground' />
 								)}
 							</Button>
 						</div>
@@ -113,12 +113,12 @@ const AlbumPage = () => {
 												key={song._id}
 												onClick={() => handlePlaySong(index)}
 												className={`grid grid-cols-[16px_4fr_2fr_1fr] gap-4 px-4 py-2 text-sm 
-                      text-zinc-400 hover:bg-white/5 rounded-md group cursor-pointer
+                      text-zinc-400 hover:bg-white/5 rounded-md group cursor-pointer transition-colors
                       `}
 											>
 												<div className='flex items-center justify-center'>
 													{isCurrentSong && isPlaying ? (
-														<div className='size-4 text-green-500'>♫</div>
+														<div className='size-4 text-primary'>♫</div>
 													) : (
 														<span className='group-hover:hidden'>{index + 1}</span>
 													)}

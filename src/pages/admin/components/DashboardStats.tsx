@@ -4,6 +4,7 @@ import StatsCard from "./StatsCard";
 
 const DashboardStats = () => {
 	const { stats } = useMusicStore();
+	stats.totalAlbums.toString();
 
 	const statsData = [
 		{

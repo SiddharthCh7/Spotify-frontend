@@ -1,5 +1,5 @@
-import { SignedOut, UserButton } from "@clerk/clerk-react";
-import { LayoutDashboardIcon } from "lucide-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import { LayoutDashboardIcon, Settings, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
 import SignInOAuthButtons from "./SignInOAuthButtons";
 import { useAuthStore } from "@/stores/useAuthStore";
@@ -16,9 +16,24 @@ const Topbar = () => {
       backdrop-blur-md z-10'
 		>
 			<div className='flex gap-2 items-center'>
-				<img src='/spotify.png' className='size-8' alt='Spotify logo' />
+				<img src='/logo.png' className='size-8' alt='Spotify logo' />
 				Spotify
 			</div>
+			<SignedIn>
+				<Link to="/settings">
+					<div className="flex gap-2 items-center cursor-pointer hover:opacity-80">
+						<Settings className="w-6 h-6" />
+						<span>Settings</span>
+					</div>
+				</Link>
+
+				<Link to="/artist">
+				<div className="flex gap-2 items-center cursor-pointer hover:opacity-80">
+					<UserPlus className="w-6 h-6" />
+					<span>Artist</span>
+				</div>
+				</Link>
+			</SignedIn>
 			<div className='flex items-center gap-4'>
 				{isAdmin && (
 					<Link to={"/admin"} className={cn(buttonVariants({ variant: "outline" }))}>

@@ -50,7 +50,7 @@ export const PlaybackControls = () => {
 	};
 
 	return (
-		<footer className='h-20 sm:h-24 bg-zinc-900 border-t border-zinc-800 px-4'>
+		<footer className='h-20 sm:h-24 glass border-t border-white/10 px-4 m-4 rounded-2xl z-50'>
 			<div className='flex justify-between items-center h-full max-w-[1800px] mx-auto'>
 				{/* currently playing song */}
 				<div className='hidden sm:flex items-center gap-4 min-w-[180px] w-[30%]'>
@@ -59,10 +59,10 @@ export const PlaybackControls = () => {
 							<img
 								src={currentSong.imageUrl}
 								alt={currentSong.title}
-								className='w-14 h-14 object-cover rounded-md'
+								className='w-14 h-14 object-cover rounded-md shadow-lg border border-white/10'
 							/>
 							<div className='flex-1 min-w-0'>
-								<div className='font-medium truncate hover:underline cursor-pointer'>
+								<div className='font-medium truncate hover:underline cursor-pointer text-white'>
 									{currentSong.title}
 								</div>
 								<div className='text-sm text-zinc-400 truncate hover:underline cursor-pointer'>
@@ -79,7 +79,7 @@ export const PlaybackControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hidden sm:inline-flex hover:text-white text-zinc-400'
+							className='hidden sm:inline-flex hover:text-white text-zinc-400 hover:bg-white/10'
 						>
 							<Shuffle className='h-4 w-4' />
 						</Button>
@@ -87,7 +87,7 @@ export const PlaybackControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hover:text-white text-zinc-400'
+							className='hover:text-white text-zinc-400 hover:bg-white/10'
 							onClick={playPrevious}
 							disabled={!currentSong}
 						>
@@ -96,7 +96,7 @@ export const PlaybackControls = () => {
 
 						<Button
 							size='icon'
-							className='bg-white hover:bg-white/80 text-black rounded-full h-8 w-8'
+							className='bg-primary hover:bg-primary/80 text-primary-foreground rounded-full h-10 w-10 shadow-lg shadow-primary/20'
 							onClick={togglePlay}
 							disabled={!currentSong}
 						>
@@ -105,7 +105,7 @@ export const PlaybackControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hover:text-white text-zinc-400'
+							className='hover:text-white text-zinc-400 hover:bg-white/10'
 							onClick={playNext}
 							disabled={!currentSong}
 						>
@@ -114,7 +114,7 @@ export const PlaybackControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hidden sm:inline-flex hover:text-white text-zinc-400'
+							className='hidden sm:inline-flex hover:text-white text-zinc-400 hover:bg-white/10'
 						>
 							<Repeat className='h-4 w-4' />
 						</Button>
@@ -134,18 +134,18 @@ export const PlaybackControls = () => {
 				</div>
 				{/* volume controls */}
 				<div className='hidden sm:flex items-center gap-4 min-w-[180px] w-[30%] justify-end'>
-					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400 hover:bg-white/10'>
 						<Mic2 className='h-4 w-4' />
 					</Button>
-					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400 hover:bg-white/10'>
 						<ListMusic className='h-4 w-4' />
 					</Button>
-					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400 hover:bg-white/10'>
 						<Laptop2 className='h-4 w-4' />
 					</Button>
 
 					<div className='flex items-center gap-2'>
-						<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+						<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400 hover:bg-white/10'>
 							<Volume1 className='h-4 w-4' />
 						</Button>
 

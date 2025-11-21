@@ -21,6 +21,7 @@ const AuthCallbackPage = () => {
 					id: user.id,
 					firstName: user.firstName,
 					lastName: user.lastName,
+					email: user.primaryEmailAddress?.emailAddress,
 					imageUrl: user.imageUrl,
 				});
 				

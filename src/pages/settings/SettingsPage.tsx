@@ -15,7 +15,7 @@ import { UserPlus } from "lucide-react";
 import { axiosInstance } from "@/lib/axios";
 
 import toast from "react-hot-toast";
-import Header from "../admin/components/Header";
+// import Header from "../admin/components/Header";
 
 export default function SettingsPage() {
   const [loading, setLoading] = useState(false);

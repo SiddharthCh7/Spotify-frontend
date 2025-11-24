@@ -23,7 +23,7 @@ interface SongInput {
 const AddAlbumDialog = () => {
 	const [albumDialogOpen, setAlbumDialogOpen] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
-	const [isSongDialogOpen, setIsSongDialogOpen] = useState(false);
+	// const [isSongDialogOpen, setIsSongDialogOpen] = useState(false);
 	const fileInputRef = useRef<HTMLInputElement>(null);
 	const audioInputRef = useRef<HTMLInputElement>(null);
 

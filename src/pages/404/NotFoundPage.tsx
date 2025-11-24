@@ -6,11 +6,11 @@ export default function NotFoundPage() {
 	const navigate = useNavigate();
 
 	return (
-		<div className='h-screen bg-neutral-900 flex items-center justify-center'>
+		<div className='h-screen bg-background flex items-center justify-center'>
 			<div className='text-center space-y-8 px-4'>
 				{/* Large animated musical note */}
 				<div className='flex justify-center animate-bounce'>
-					<Music2 className='h-24 w-24 text-emerald-500' />
+					<Music2 className='h-24 w-24 text-primary' />
 				</div>
 
 				{/* Error message */}
@@ -27,13 +27,13 @@ export default function NotFoundPage() {
 					<Button
 						onClick={() => navigate(-1)}
 						variant='outline'
-						className='bg-neutral-800 hover:bg-neutral-700 text-white border-neutral-700 w-full sm:w-auto'
+						className='bg-white/5 hover:bg-white/10 text-white border-white/10 w-full sm:w-auto'
 					>
 						Go Back
 					</Button>
 					<Button
 						onClick={() => navigate("/")}
-						className='bg-emerald-500 hover:bg-emerald-600 text-white w-full sm:w-auto'
+						className='bg-primary hover:bg-primary/80 text-primary-foreground w-full sm:w-auto'
 					>
 						<Home className='mr-2 h-4 w-4' />
 						Back to Home

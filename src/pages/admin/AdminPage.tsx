@@ -22,21 +22,18 @@ const AdminPage = () => {
 	if (!isAdmin && !isLoading) return <div>Unauthorized</div>;
 
 	return (
-		<div
-			className='min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900
-   to-black text-zinc-100 p-8'
-		>
+		<div className='min-h-screen bg-gradient-to-b from-zinc-900/50 via-zinc-900/50 to-black/50 text-zinc-100 p-8'>
 			<Header />
 
 			<DashboardStats />
 
 			<Tabs defaultValue='songs' className='space-y-6'>
-				<TabsList className='p-1 bg-zinc-800/50'>
-					<TabsTrigger value='songs' className='data-[state=active]:bg-zinc-700'>
+				<TabsList className='p-1 bg-white/5 border border-white/10'>
+					<TabsTrigger value='songs' className='data-[state=active]:bg-white/10 data-[state=active]:text-white hover:bg-white/5 transition-colors'>
 						<Music className='mr-2 size-4' />
 						Songs
 					</TabsTrigger>
-					<TabsTrigger value='albums' className='data-[state=active]:bg-zinc-700'>
+					<TabsTrigger value='albums' className='data-[state=active]:bg-white/10 data-[state=active]:text-white hover:bg-white/5 transition-colors'>
 						<Album className='mr-2 size-4' />
 						Albums
 					</TabsTrigger>

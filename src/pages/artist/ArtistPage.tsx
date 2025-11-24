@@ -1,27 +1,22 @@
-import { useAuthStore } from "@/stores/useAuthStore";
 import { Album, Music } from "lucide-react";
 import { useEffect } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useMusicStore } from "@/stores/useMusicStore.js";
 
 import SongsTabContent from "../admin/components/SongsTabContent.js";
 import AlbumsTabContent from "../admin/components/AlbumsTabContent.js";
 import Header from "../admin/components/Header.js";
-import DashboardStats from "../admin/components/DashboardStats.js";
+// import DashboardStats from "../admin/components/DashboardStats.js";
+import { useArtistStore } from "@/stores/useArtistStore.js";
 
 const ArtistPage = () => {
-	const { isAdmin, isLoading } = useAuthStore();
 
-	const { fetchAlbums, fetchSongs, fetchStats } = useMusicStore();
+	const { fetchAlbums, fetchSongs } = useArtistStore();
 
 	useEffect(() => {
 		fetchAlbums();
 		fetchSongs();
-		fetchStats();
-	}, [fetchAlbums, fetchSongs, fetchStats]);
-
-	if (!isAdmin && !isLoading) return <div>Unauthorized</div>;
+	}, [fetchAlbums, fetchSongs]);
 
 	return (
 		<div
@@ -30,7 +25,7 @@ const ArtistPage = () => {
 		>
 			<Header />
 
-			<DashboardStats />
+			{/* <DashboardStats /> */}
 
 			<Tabs defaultValue='songs' className='space-y-6'>
 				<TabsList className='p-1 bg-zinc-800/50'>
